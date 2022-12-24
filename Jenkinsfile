@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        maven 'maven-3.8.6' 
+        maven 'maven-3.8.3' 
     }
 
     stages {
@@ -11,8 +11,7 @@ pipeline {
             steps {
                 git credentialsId: 'github-cred', url: 'https://github.com/vin58dev/hackathon-starter.git'
             }
-        }
-        
+        } 
         stage('build the code') {
             steps {
                 sh 'mvn clean package'
